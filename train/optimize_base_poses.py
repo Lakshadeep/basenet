@@ -14,13 +14,13 @@ import os
 
 from basenet.tasks.optimize_base_poses import OptimizeBasePoses
 
-from mushroom_rl.algorithms.actor_critic import SAC, DDPG, SAC_hybrid, GaRrHyRL, BHyRL, PPO, Gs
+from mushroom_rl.algorithms.actor_critic import SAC
 from mushroom_rl.core import Core, Logger
 from mushroom_rl.environments.gym_env import Gym
 from mushroom_rl.utils.dataset import compute_J, parse_dataset
 
 
-from basenet.networks.optimize_base_poses_mlp import ActorNetwork, CriticNetwork
+from basenet.networks.optimize_base_poses import ActorNetwork, CriticNetwork
 
 
 def experiment(cfg, alg):

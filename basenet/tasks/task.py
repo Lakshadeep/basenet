@@ -119,9 +119,11 @@ class Task(Environment):
         horizon = cfg.task.mdp.horizon
 
         observation_space = spaces.Box(low=np.array([self.cfg.task.mdp.table_dimensions.x_min, 
-                                                    self.cfg.task.mdp.table_dimensions.y_min,-np.pi]), 
+                                                    self.cfg.task.mdp.table_dimensions.y_min,-np.pi,
+                                                    -2, -2, -np.pi]), 
                                         high=np.array([self.cfg.task.mdp.table_dimensions.x_max, 
-                                                    self.cfg.task.mdp.table_dimensions.y_max,np.pi]))
+                                                    self.cfg.task.mdp.table_dimensions.y_max,np.pi,
+                                                    2, 2, np.pi]))
         
         if self.cfg.task.subtask == 'sequence' or self.cfg.task.subtask == 'sequence_nc':
             # robot, objects
@@ -455,7 +457,8 @@ class Task(Environment):
             robot_base_pose = self.robot_base_prim.get_world_pose()
             cracker_box_pose = self.cracker_box_prim.get_world_pose()
             robot_pose_t, obj_poses_t = self.transform_all_poses_to_table_frame(table_pose, robot_base_pose, [cracker_box_pose])
-            return obj_poses_t[0,0:3]
+            state = np.hstack((obj_poses_t[0,0:3], robot_pose_t[0:3]))
+            return state
         elif self.cfg.task.subtask == 'sequence' or self.cfg.task.subtask == 'single_sequence':
             table_pose = self.table_prim.get_world_pose()
             robot_base_pose = self.robot_base_prim.get_world_pose()

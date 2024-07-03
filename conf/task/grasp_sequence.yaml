@@ -1,0 +1,46 @@
+subtask: 'sequence'
+env_file: "/home/sdur/Planning/Codes/base_pose_optimization/isaac_envs/task.usd"
+mdp:
+  gamma: 0.95
+  horizon: 5
+  reward:
+    task_success: 100000
+  navigation:
+    max_tran_speed: 0.5
+    max_rot_speed: 0.5
+  manipulation:
+    max_rot_speed: 0.25
+  table_dimensions:
+    x_min: -0.4 
+    x_max:  0.4
+    y_min: -1.0
+    y_max:  1.0
+  safe_dist_from_table: 0.1
+  max_dist_from_table: 0.3
+  obj_safety_distance: 0.1
+  render: False
+train:
+  initial_replay_size:  150
+  max_replay_size:  20000
+  batch_size: 32
+  n_features: 64 
+  warmup_transitions: 150
+  tau: 0.005
+  n_steps_per_fit: 1
+  lr_alpha: 3e-4
+  lr_actor: 3e-4
+  lr_critic: 3e-4
+  target_entropy: -3
+  n_epochs: 2001
+  n_steps_train: 10
+  n_steps_test: 45
+  save_dir: '/home/sdur/Planning/Data/BaSeNet'
+  pre_trained_agent_dir: '/home/sdur/Planning/Data/BaSeNet'
+  pre_trained_agent_name: 'optimize_base_pose_SAC_epoch_0'
+test:
+  save_dir: '/home/sdur/Planning/Data/BaSeNet'
+  epoch_no: 240
+  n_episodes: 1000
+  n_steps: 5000
+  save_data: False
+

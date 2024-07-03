@@ -1,4 +1,4 @@
-from basenet.tasks.task10 import Task
+from basenet.tasks.task import Task
 
 import numpy as np
 import math
