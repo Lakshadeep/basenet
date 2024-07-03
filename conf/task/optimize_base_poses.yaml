@@ -37,7 +37,7 @@ train:
   save_dir: '/home/sdur/Planning/Data/BaSeNet'
 test:
   save_dir: '/home/sdur/Planning/Data/BaSeNet'
-  epoch_no: 0
+  agent_name: 'optimize_base_pose_SAC_epoch_1000'
   n_episodes: 5000
   n_steps: 5000
   save_data: True

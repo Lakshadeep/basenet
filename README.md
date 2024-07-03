@@ -26,6 +26,17 @@ omegaconf, hydra, hydra-core, tqdm, opencv-python,  mushroom-rl (local), shapely
 ./python.sh -m pip install -e {package path}/  --global-option=build_ext --global-option=build_ext  --global-option="-I{Isaac install pathj}/ov/pkg/isaac_sim-2022.2.1/kit/python/include/python3.7m"
 ```
 
+#### Downloading assets folders
+Isaac environments:
+```
+https://drive.google.com/file/d/1M_ZJ-aGrzppw-4W2XNWWGqJjJK4n369T/view?usp=drive_link
+```
+UR5e assets
+```
+https://drive.google.com/file/d/1T60DYvzTUsxCs0e-PZlhVjGw636J9WoX/view?usp=drive_link
+```
+Download, unzip both the folders and place them inside the repository.
+
 ## NOTES:
 - Before trying to run the code, please change relative paths in all the config files in 'conf' folder.
 
@@ -38,14 +49,18 @@ First open `{Isaac install path}/ov/pkg/isaac_sim-2022.2.1` in terminal and run 
 
 # Training
 Layer 1: optimal base pose for grasping
+
+(Ensure that `optimize_base_poses' config file is loaded in cnf/config.yml)
 ```
 ./python.sh {package path}/basenet/train/optimize_base_poses.py 
 
 ```
 
 Layer 2: determine grasp sequence
+
+(Ensure that `grasp_sequence' config file is loaded in cnf/config.yml)
 ```
-./python.sh {package path}/basenet/train/grasp_decision.py 
+./python.sh {package path}/basenet/train/grasp_sequence.py 
 
 ```
 

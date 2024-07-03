@@ -1,5 +1,5 @@
 subtask: 'sequence'
-env_file: "/home/sdur/Planning/Codes/base_pose_optimization/isaac_envs/task.usd"
+env_file: "/home/sdur/Planning/Codes/basenet/isaac_envs/task.usd"
 mdp:
   gamma: 0.95
   horizon: 5
@@ -36,7 +36,7 @@ train:
   n_steps_test: 45
   save_dir: '/home/sdur/Planning/Data/BaSeNet'
   pre_trained_agent_dir: '/home/sdur/Planning/Data/BaSeNet'
-  pre_trained_agent_name: 'optimize_base_pose_SAC_epoch_0'
+  pre_trained_agent_name: 'optimize_base_pose_SAC_epoch_1000'
 test:
   save_dir: '/home/sdur/Planning/Data/BaSeNet'
   epoch_no: 240
