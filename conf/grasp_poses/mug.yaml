@@ -1,0 +1,15 @@
+mug:
+  # top:
+  #   x_tran: 0.0
+  #   y_tran: 0.0
+  #   z_tran: 0.3
+  #   x_rot: -3.14
+  #   y_rot: 0
+  #   z_rot: 1.57
+  top:
+    x_tran: -0.06
+    y_tran: 0.0
+    z_tran: 0.3
+    x_rot: -3.14
+    y_rot: 0.0
+    z_rot: 0.0

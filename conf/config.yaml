@@ -1,0 +1,10 @@
+defaults:
+  - task/optimize_base_poses
+  # - task/grasp_sequence.yaml
+  - grasp_poses/cracker_box
+  - grasp_poses/bleach_cleanser
+  - grasp_poses/mustard_bottle
+  - grasp_poses/mug
+  - grasp_poses/bowl
+
+

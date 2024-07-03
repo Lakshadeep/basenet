@@ -1,0 +1,8 @@
+cracker_box:
+  top:
+    x_tran: 0.0
+    y_tran: 0.0
+    z_tran: 0.3
+    x_rot: 0.0
+    y_rot: 3.14
+    z_rot: 0
