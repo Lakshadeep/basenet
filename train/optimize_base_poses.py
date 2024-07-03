@@ -141,7 +141,7 @@ def experiment(cfg, alg):
             np.savez('{}/data_logs.npz'.format(save_dir), full_save=True, J=J_mean_logs, R=R_mean_logs, E=E_logs, J_var=J_var_logs, R_var=R_var_logs)
     
     agent.save('optimize_base_pose_{}.msh'.format(alg.__name__), full_save=True)
-    np.savez('{}/data_logs.npz'.format(save_dir), full_save=True, J=J_mean_logs, R=R_mean_logs, E=E_logs, J_var=J_var_logs, R_var=R_var_logs)
+    np.savez('{}/data_logs1.npz'.format(save_dir), full_save=True, J=J_mean_logs, R=R_mean_logs, E=E_logs, J_var=J_var_logs, R_var=R_var_logs)
 
     print("Training done")
     mdp.shutdown()
