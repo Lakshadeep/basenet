@@ -50,7 +50,7 @@ First open `{Isaac install path}/ov/pkg/isaac_sim-2022.2.1` in terminal and run 
 # Training
 Layer 1: optimal base pose for grasping
 
-(Ensure that `optimize_base_poses' config file is loaded in cnf/config.yml)
+(Ensure that `optimize_base_poses' config file is loaded in conf/config.yml)
 ```
 ./python.sh {package path}/basenet/train/optimize_base_poses.py 
 
@@ -58,9 +58,26 @@ Layer 1: optimal base pose for grasping
 
 Layer 2: determine grasp sequence
 
-(Ensure that `grasp_sequence' config file is loaded in cnf/config.yml)
+(Ensure that `grasp_sequence' config file is loaded in conf/config.yml)
 ```
 ./python.sh {package path}/basenet/train/grasp_sequence.py 
+
+```
+
+# Testing
+Layer 1: optimal base pose for grasping
+
+(Ensure that `optimize_base_poses' config file is loaded in conf/config.yml)
+```
+./python.sh {package path}/basenet/test/optimize_base_poses.py 
+
+```
+
+Layer 2: determine grasp sequence
+
+(Ensure that `grasp_sequence' config file is loaded in conf/config.yml)
+```
+./python.sh {package path}/basenet/test/grasp_sequence.py 
 
 ```
 
